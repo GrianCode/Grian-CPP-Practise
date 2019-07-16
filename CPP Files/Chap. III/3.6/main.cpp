@@ -1,4 +1,5 @@
 #include<iostream>
+#include"C:\G-INCLUDE\normal.h"
 using namespace std;
 int main()
  {
@@ -8,6 +9,7 @@ int main()
 	a=many/8;
 	b=(many-a)*3;
 	string out="илЁг";
+	loadPE();
 	
 	if((many*3*0.88)>b)
 	{
