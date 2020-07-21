@@ -1,0 +1,32 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+int main() {
+    //√987654321 = 31426.9681
+    //√123456789 = 11111.111060556
+    int n[9], m = 0;
+    memset(n, 0, sizeof(n));
+    for (int i = 11111; i <= 31430; i++) {
+        m = i * i;
+        for (int a = 8; a >= 0; a--) {
+            n[a] = m % 10;
+            m /= 10;
+        }
+        bool ifcontinue = false;
+        for (int a = 0; a < 9; a++) {
+            for (int b = 0; b < 9; b++) {
+                if (a == b) {
+                    continue;
+                }
+                if (n[a] == n[b]) {
+                    ifcontinue = true;
+                }
+            }
+        }
+        if (ifcontinue) {
+            continue;
+        }
+        cout << i << "^2=" << i * i << endl;
+    }
+    return 0;
+}
